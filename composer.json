@@ -15,10 +15,41 @@
     }
   ],
   "type": "project",
-  "repositories":[
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.9.5",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9MTU3MjA1fHR5cGU9cGVyc29uYWx8ZGF0ZT0yMDE5LTA0LTA0IDA2OjA5OjE2&t=5.9.5"
+        }
+      },
+      "require": {
+        "composer/installers": "^1.9.0",
+        "ffraenz/private-composer-installer": "^3.0.1"
+      }
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/tabrisrp/wp-background-processing"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/wp-media/wp-rocket"
+    },
     {
       "type": "composer",
-      "url": "https://wpackagist.org"
+      "url": "https://repo.packagist.com/eraville-concept-web/"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.freemius.com/packages.json?authorization=Basic+c3RldmVAZXJhdmlsbGVjb25jZXB0d2ViLmNvbTotVEJHTVh0blhaLXozNlhyWXM1YWtwZWNuak1kbXZfMDJUdjFVSnFfckVr"
+    },
+    {
+      "packagist": false
     }
   ],
   "autoload": {
@@ -32,15 +63,23 @@
     "optimize-autoloader": true
   },
   "require": {
-    "php": ">=7.1.0",
-    "johnpbloch/wordpress-core": "^5.6.0",
+    "php": ">=7.3",
+    "advanced-custom-fields/advanced-custom-fields-pro": "5.9.5",
+    "deliciousbrains-plugin/wp-migrate-db-pro": "^1.9.14",
+    "deliciousbrains-plugin/wp-migrate-db-pro-media-files": "^1.4.15",
+    "johnpbloch/wordpress-core": "^5.7.0",
     "johnpbloch/wordpress-core-installer": "^2.0",
-    "themosis/framework": "^2.0.0"
+    "themosis/ecw-framework": "dev-custom",
+    "oscarotero/env": "^2.1"
   },
   "require-dev": {
-    "laravel/homestead": "^7.0",
-    "phpunit/phpunit": "^7.0",
-    "symfony/var-dumper": "^4.2"
+    "friendsofphp/php-cs-fixer": "2.18.*",
+    "laravel/homestead": "v11.1.2",
+    "phpunit/phpunit": "^9.5.0",
+    "squizlabs/php_codesniffer": "3.*",
+    "symfony/var-dumper": "v4.4.17",
+    "wp-cli/wp-cli": "^2.4",
+    "wp-coding-standards/wpcs": "^2.3"
   },
   "extra":{
     "installer-paths": {
@@ -65,6 +104,7 @@
     "post-create-project-cmd": [
       "@php console vendor:publish --tag=themosis --force",
       "@php console key:generate --ansi"
-    ]
+    ],
+    "php-cs-fixer": "php-cs-fixer --rules=@PSR2"
   }
 }
