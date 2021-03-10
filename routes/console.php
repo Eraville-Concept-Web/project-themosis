@@ -13,6 +13,3 @@ use Themosis\Core\HelloDolly;
 |
 */
 
-Console::command('hello', function () {
-    $this->comment(HelloDolly::lyric());
-})->describe('Display a lyric from the Hello, Dolly song sung by Louis Armstrong');
