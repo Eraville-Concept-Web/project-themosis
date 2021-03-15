@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+require('mix-tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +12,8 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'htdocs/dist/')
-    .sass('resources/sass/app.scss', 'htdocs/dist/');
+mix.js('resources/js/app.js', 'htdocs/dist/js/');
+mix.sass('resources/sass/app.scss', 'htdocs/dist/css/').tailwind();
 
 // Full API
 // mix.js(src, output);

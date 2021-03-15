@@ -11,7 +11,7 @@
 		| any other location as required by the application or its packages.
 		|
 		*/
-		'name'    => env( 'APP_NAME', 'Themosis' ),
+		'name'    => env('APP_NAME', 'Themosis'),
 
 		/*
 		|--------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 		| services your application utilizes. Set this in your ".env" file.
 		|
 		*/
-		'env'     => env( 'APP_ENV', 'production' ),
+		'env'     => env('APP_ENV', 'production'),
 
 		/*
 		|--------------------------------------------------------------------------
@@ -35,7 +35,7 @@
 		| application. If disabled, a simple generic error page is shown.
 		|
 		*/
-		'debug'   => env( 'APP_DEBUG', false ),
+		'debug'   => env('APP_DEBUG', false),
 
 		/*
 		|--------------------------------------------------------------------------
@@ -43,7 +43,8 @@
 		|--------------------------------------------------------------------------
 		|
 		*/
-		'url'     => env( 'APP_URL', 'http://localhost' ),
+		'url'     => env('APP_URL', 'http://localhost'),
+		'text_domain' => env('APP_TD', 'themosis'),
 
 		/*
 		|--------------------------------------------------------------------------
@@ -52,8 +53,23 @@
 		|
 		*/
 		'wp'      => [
-			'url' => env( 'WP_URL', 'http://localhost/cms' ),
-			'dir' => env( 'WP_DIR', 'cms' ),
+			'url'              => env('WP_URL', 'http://localhost/cms'),
+			'dir'              => env('WP_DIR', 'cms'),
+			'memory_limit'     => env('WP_MEMORY_LIMIT', '512M'),
+			'memory_limit_max' => env('WP_MAX_MEMORY_LIMIT', '1024M'),
+			'number_revisions' => env('WP_POST_REVISIONS', 3),
+		],
+
+		/*
+	   |--------------------------------------------------------------------------
+	   | WordPress
+	   |--------------------------------------------------------------------------
+	   |
+	   */
+
+		'plugins' => [
+			'wp_rocket_email' =>  env('WP_ROCKET_EMAIL'),
+			'wp_rocket_key' => env('WP_ROCKET_KEY')
 		],
 
 		/*
@@ -62,7 +78,7 @@
 		|--------------------------------------------------------------------------
 		|
 		*/
-		'charset' => env( 'APP_CHARSET', 'UTF-8' ),
+		'charset' => env('APP_CHARSET', 'UTF-8'),
 
 		/*
 		|--------------------------------------------------------------------------
@@ -86,7 +102,7 @@
 		| will not be safe. Please do this before deploying an application!
 		|
 		*/
-		'key'     => env( 'APP_KEY' ),
+		'key'     => env('APP_KEY'),
 
 		'cipher'     => 'AES-256-CBC',
 
@@ -107,7 +123,6 @@
 			Illuminate\Auth\AuthServiceProvider::class,
 			Illuminate\Bus\BusServiceProvider::class,
 			Illuminate\Cache\CacheServiceProvider::class,
-			Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
 			Illuminate\Cookie\CookieServiceProvider::class,
 			Illuminate\Database\DatabaseServiceProvider::class,
 			Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -122,6 +137,8 @@
 			Illuminate\Translation\TranslationServiceProvider::class,
 			Illuminate\Validation\ValidationServiceProvider::class,
 			Illuminate\Queue\QueueServiceProvider::class,
+			Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
+			Themosis\Core\Providers\ArtisanServiceProvider::class,
 			Themosis\View\ViewServiceProvider::class,
 			Themosis\Ajax\AjaxServiceProvider::class,
 			Themosis\Asset\AssetServiceProvider::class,
@@ -159,6 +176,7 @@
 			App\Hooks\Compat::class,
 			App\Hooks\Mail::class,
 			App\Hooks\Widgets::class,
+			App\Hooks\AcfHook::class
 		],
 
 		/*
@@ -230,24 +248,32 @@
 			'is_archive'           => 'archive',
 			'is_attachment'        => 'attachment',
 			'is_author'            => 'author',
-			'is_category'          => [ 'category', 'cat' ],
+			'is_category'          => ['category', 'cat'],
 			'is_date'              => 'date',
 			'is_day'               => 'day',
-			'is_front_page'        => [ '/', 'front' ],
-			'is_home'              => [ 'home', 'blog' ],
+			'is_front_page'        => ['/', 'front'],
+			'is_home'              => ['home', 'blog'],
 			'is_month'             => 'month',
 			'is_page'              => 'page',
 			'is_paged'             => 'paged',
 			'is_page_template'     => 'template',
-			'is_post_type_archive' => [ 'post-type-archive', 'postTypeArchive' ],
+			'is_post_type_archive' => ['post-type-archive', 'postTypeArchive'],
 			'is_search'            => 'search',
 			'is_single'            => 'single',
 			'is_singular'          => 'singular',
 			'is_sticky'            => 'sticky',
-			'is_subpage'           => [ 'subpage', 'subpageof' ],
+			'is_subpage'           => ['subpage', 'subpageof'],
 			'is_tag'               => 'tag',
 			'is_tax'               => 'tax',
 			'is_time'              => 'time',
 			'is_year'              => 'year',
+			'is_shop'              => 'shop',
+			'is_product'           => 'product',
+			'is_cart'              => 'cart',
+			'is_checkout'          => 'checkout',
+			'is_account_page'      => 'account',
+			'is_product_category'  => 'product_category',
+			'is_product_tag'       => 'product_tag',
+			'is_wc_endpoint_url'   => 'wc_endpoint',
 		],
 	];

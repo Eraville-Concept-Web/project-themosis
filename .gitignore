@@ -24,4 +24,14 @@ node_modules/
 /htdocs/content/upgrade/
 
 ### Environment Credentials
+.env.env
 .env
+.env.production
+cache/
+/htdocs/content/advanced-cache.php
+/htdocs/content/wp-rocket-config/
+updraft/
+plugins/
+mu-plugins/
+generatepress/
+twentytwentyone/

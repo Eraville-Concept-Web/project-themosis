@@ -1,0 +1,63 @@
+
+@mixin media( $res ) {
+	@if mobile == $res {
+		@media only screen and (min-width: $mobile_width) {
+			@content;
+		}
+	}
+
+	@if mobile-landscape == $res {
+		@media only screen and (min-height: $mobile_width) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	@if tablet == $res {
+		@media only screen and (min-width: $tablet_width) {
+			@content;
+		}
+	}
+
+	@if tablet-lanscape == $res {
+		@media only screen and (min-height: $tablet_width) and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	@if desktop == $res {
+		@media only screen and (min-width: $desktop_width) {
+			@content;
+		}
+	}
+
+	@if wide == $res {
+		@media only screen and (min-width: $wide_width) {
+			@content;
+		}
+	}
+}
+
+@mixin link-transition( $attr: color ) {
+	transition: $attr $link_transition ease-in-out;
+}
+
+@mixin button-transition() {
+	transition: background $button_transition ease-in-out;
+}
+
+@mixin button-all-transition() {
+	transition: all $button_transition ease-in-out;
+}
+
+@mixin background-transition() {
+	transition: background $background_transition ease-in-out;
+}
+
+@mixin selection {
+	::-moz-selection {
+		@content;
+	}
+	::selection {
+		@content;
+	}
+}
