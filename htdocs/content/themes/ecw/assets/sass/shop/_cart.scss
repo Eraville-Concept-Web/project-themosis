@@ -1,0 +1,76 @@
+.woocommerce {
+
+	table.shop_table {
+
+		th {
+			background-color: $purple !important;
+			color: $white;
+		}
+
+		td {
+
+			&.product-remove {
+
+				a {
+					background-color: $purple !important;
+					color: $white !important;
+					font-size: 30px;
+					line-height: 14px;
+				}
+			}
+
+			&.product-thumbnail {
+				img {
+					margin: auto;
+				}
+			}
+
+			&.product-name,
+			&.product-price,
+			&.product-quantity,
+			&.product-subtotal {
+				border-left: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			&.product-subtotal {
+				border-right: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			&.actions {
+
+				.coupon {
+
+					label {
+						display: none;
+					}
+				}
+
+				button {
+					margin: 0 10px;
+					width: 200px;
+				}
+
+				button[type="submit"] {
+					display: inline-block;
+				}
+			}
+		}
+
+		.variation-Confirmationofparticipants {
+			display: none;
+		}
+	}
+
+	.cart-collaterals {
+
+		.shop_table {
+
+			tr {
+
+				td {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

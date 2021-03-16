@@ -1,0 +1,44 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border-radius: 5px;
+}
+
+#mbt-contact-form {
+
+	form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	p,
+	select {
+		width: 100%;
+	}
+
+	.required-field {
+		color: $color__red;
+		font-size: 15px;
+		vertical-align: middle;
+	}
+
+	.contact-input-half-columns {
+		margin-bottom: 20px;
+		padding-left: calc(10px / 2);
+		padding-right: calc(10px / 2);
+		width: 50%;
+	}
+}

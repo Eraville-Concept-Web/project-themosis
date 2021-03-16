@@ -1,0 +1,28 @@
+.footer-widget-1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	h2 {
+		font-weight: 400;
+		text-align: center;
+	}
+}
+
+.footer-widgets {
+	h2 {
+		font-size: 14px;
+		font-weight: 700;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+
+	.wp-block-button__link {
+		border: 2px solid #fff;
+		font-weight: 500;
+
+		&:hover {
+			background-color: $blue-hover;
+		}
+	}
+}

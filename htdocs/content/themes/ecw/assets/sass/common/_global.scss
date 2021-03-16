@@ -1,0 +1,172 @@
+//GENERAL
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+div,
+span,
+a {
+	word-break: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+body,
+button,
+input,
+select,
+textarea {
+	@include font-family($font__heading);
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $dark;
+}
+
+.header_link_email {
+	padding: 0 10px 0 0;
+}
+
+.special-title {
+	background-color: $purple;
+	border: 1px double;
+	color: $white;
+	font-style: italic;
+	font-weight: 600;
+	padding: 20px;
+}
+
+.nolink {
+	cursor: default;
+	pointer-events: none;
+}
+
+/*
+HOME PAGE
+ */
+
+.eael-interactive-promo {
+
+	figure.effect-lily {
+		background-color: $dark;
+
+		figcaption > div {
+			bottom: 170px;
+
+			@include md {
+				bottom: 130px;
+			}
+
+			@include sm {
+				bottom: 80px;
+			}
+		}
+
+		p {
+			font-weight: 700;
+		}
+	}
+}
+
+//Login Page
+
+.elementor-login__logged-in-message {
+	color: $white;
+}
+
+//FAQ Page
+
+.mbt-faq {
+
+	h1,
+	h3 {
+		color: #fff;
+		text-transform: uppercase;
+	}
+}
+
+.elementor-accordion-item {
+
+	.elementor-active {
+
+		a {
+			color: $purple !important;
+		}
+	}
+
+	a {
+		color: $white !important;
+	}
+}
+
+//Breadcrumbs
+
+.breadcrumb {
+	color: $white;
+
+	.breadcrumb-item {
+		color: $purple;
+
+		a {
+			color: $purple;
+		}
+
+		&.active {
+
+			a {
+				color: $white;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.breadcrumbs-archive {
+
+	.breadcrumb {
+		color: $purple;
+
+		.breadcrumb-item {
+
+			&.active {
+
+				a {
+					color: $purple;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
+
+//TablePress
+
+.tablepress tfoot th,
+.tablepress thead th {
+	background-color: $purple;
+	color: $white;
+}
+
+//Main Menu
+
+.unclickable > a:hover {
+	cursor: default;
+}
+
+/*********************************
+          RESPONSIVE
+ *********************************/

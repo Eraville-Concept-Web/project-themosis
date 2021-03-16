@@ -1,0 +1,40 @@
+///** === Layout === */
+//.home {
+//	#page {
+//		.site-content {
+//			max-width: 100% !important;
+//			padding: 0 !important;
+//		}
+//	}
+//}
+//
+//#page {
+//	max-width: 100%;
+//	min-height: 70vh;
+//
+//	@include media("desktop") {
+//		padding-top: 125px;
+//	}
+//
+//	.site-content, .content-area {
+//		margin: 0 auto;
+//		overflow: hidden;
+//
+//		.main, .site-main {
+//			width: 100%;
+//		}
+//	}
+//}
+//
+//.woocommerce, .woocommerce-page {
+//	#page {
+//		.site-content, .content-area {
+//			max-width: 1200px;
+//			padding: 30px 15px !important;
+//
+//			@include media(desktop) {
+//				padding: 40px 0 !important;
+//			}
+//		}
+//	}
+//}
