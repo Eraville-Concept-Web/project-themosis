@@ -96,8 +96,10 @@
       "Themosis\\Core\\ComposerScripts::postAutoloadDump",
       "@php console package:discover --ansi"
     ],
+    "pre-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
+    ],
     "post-install-cmd": [
-      "@php -r \"file_exists('.env') || copy('.env.sample', '.env');\"",
       "@php console vendor:publish --tag=themosis --force",
       "@php console key:generate --ansi"
     ],
