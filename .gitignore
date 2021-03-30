@@ -22,14 +22,13 @@ node_modules/
 /htdocs/cms/
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
+/htdocs/content/cache/
 
 ### Environment Credentials
 .env.env
 .env
 .env.production
-cache/
 /htdocs/content/advanced-cache.php
 /htdocs/content/wp-rocket-config/
 updraft/
 plugins/
-mu-plugins/
