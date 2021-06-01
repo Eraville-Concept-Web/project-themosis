@@ -58,6 +58,7 @@
 			'memory_limit'     => env('WP_MEMORY_LIMIT', '512M'),
 			'memory_limit_max' => env('WP_MAX_MEMORY_LIMIT', '1024M'),
 			'number_revisions' => env('WP_POST_REVISIONS', 3),
+			'theme'            => env('APP_THEME', 'ecw'),
 		],
 
 		/*
@@ -176,7 +177,9 @@
 			App\Hooks\Compat::class,
 			App\Hooks\Mail::class,
 			App\Hooks\Widgets::class,
-			App\Hooks\AcfHook::class
+			App\Hooks\AcfHook::class,
+			App\Hooks\Notification::class,
+			App\Hooks\WoocommerceHook::class,
 		],
 
 		/*

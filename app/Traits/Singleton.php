@@ -80,7 +80,7 @@ trait Singleton {
             $instance[$called_class] = new $called_class();
 
             /**
-             * Dependent items can use the `aquila_theme_singleton_init_{$called_class}` hook to execute code
+             * Dependent items can use the `ecw_singleton_init_{$called_class}` hook to execute code
              */
             do_action(sprintf('ecw_singleton_init_%s', $called_class)); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 

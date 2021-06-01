@@ -21,8 +21,8 @@ set :log_level, :info
 
 # Apache users with .htaccess files:
 # it needs to be added to linked_files so it persists across deploys:
-set :linked_files, fetch(:linked_files, []).push('.env', 'auth.json')
-set :linked_dirs, fetch(:linked_dirs, []).push('htdocs/content/uploads', 'htdocs/content/languages', 'htdocs/content/mu-plugins')
+set :linked_files, fetch(:linked_files, []).push('.env', 'auth.json', 'composer.phar')
+set :linked_dirs, fetch(:linked_dirs, []).push('htdocs/content/uploads', 'htdocs/content/languages')
 
 before :deploy, 'git:push'
 

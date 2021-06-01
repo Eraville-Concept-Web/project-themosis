@@ -25,6 +25,6 @@ return [
     |
     */
     'ajax' => [
-        'front' => 'themosis'
+	    'front' => config('app.name')
     ]
 ];

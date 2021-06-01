@@ -2,14 +2,11 @@
 .DS_Store
 Thumbs.db
 
-### Vagrant
-/.vagrant
-
 ### Composer
 /vendor/
 
 ### IDE
-/.idea
+#/.idea
 
 ### PHPCS
 cs_fixer*
