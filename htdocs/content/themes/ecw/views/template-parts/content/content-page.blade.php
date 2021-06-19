@@ -12,7 +12,7 @@
                 @if ( generate_show_title() )
 
                     @php($params = generate_get_the_title_parameters())
-                    {{ Loop::title( $params['before'], $params['after'] ) }}
+                    @php(the_title( $params['before'], $params['after'] );)
 
                 @endif
 

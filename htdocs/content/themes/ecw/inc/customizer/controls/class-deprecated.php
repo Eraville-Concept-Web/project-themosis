@@ -4,6 +4,7 @@
  *
  * @package GeneratePress
  */
+    include_once ABSPATH . 'wp-includes/class-wp-customize-control.php';
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -15,7 +16,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Customi
 	 *
 	 * @deprecated 1.3.47
 	 */
-	class Generate_Customize_Width_Slider_Control extends WP_Customize_Control {
+	class Generate_Customize_Width_Slider_Control extends \WP_Customize_Control {
 		/**
 		 * Render content.
 		 */
@@ -38,7 +39,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'GenerateLabelCon
 	}
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Google_Font_Dropdown_Custom_Control' ) ) {
+if ( ! class_exists( 'Generate_Google_Font_Dropdown_Custom_Control' ) ) {
 	/**
 	 * A class to create a dropdown for all google fonts
 	 */
@@ -101,7 +102,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Google_
 	}
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Select_Control' ) ) {
+if ( ! class_exists( 'Generate_Select_Control' ) ) {
 	/**
 	 * A class to create a dropdown for font weight
 	 */
@@ -159,7 +160,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Select_
 	}
 }
 
-if (class_exists( 'WP_Customize_Control' ) &&  ! class_exists( 'Generate_Hidden_Input_Control' ) ) {
+if ( ! class_exists( 'Generate_Hidden_Input_Control' ) ) {
 	/**
 	 * Create our hidden input control
 	 */
@@ -199,7 +200,7 @@ if (class_exists( 'WP_Customize_Control' ) &&  ! class_exists( 'Generate_Hidden_
 	}
 }
 
-if (class_exists( 'WP_Customize_Control' ) &&  ! class_exists( 'Generate_Font_Weight_Custom_Control' ) ) {
+if ( ! class_exists( 'Generate_Font_Weight_Custom_Control' ) ) {
 	/**
 	 * A class to create a dropdown for font weight
 	 *
@@ -247,7 +248,7 @@ if (class_exists( 'WP_Customize_Control' ) &&  ! class_exists( 'Generate_Font_We
 	}
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Text_Transform_Custom_Control' ) ) {
+if ( ! class_exists( 'Generate_Text_Transform_Custom_Control' ) ) {
 	/**
 	 * A class to create a dropdown for text-transform
 	 *
@@ -288,7 +289,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Text_Tr
 	}
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Customize_Slider_Control' ) ) {
+if ( ! class_exists( 'Generate_Customize_Slider_Control' ) ) {
 	/**
 	 * Create our container width slider control
 	 *

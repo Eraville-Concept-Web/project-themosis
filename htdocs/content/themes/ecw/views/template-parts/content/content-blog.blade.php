@@ -11,7 +11,8 @@
                 @if ( generate_show_title() )
 
                     @php($params = generate_get_the_title_parameters())
-                    {{ Loop::title( $params['before'], $params['after'] ) }}
+
+                    @php(the_title( $params['before'], $params['after'] ))
 
                 @endif
 
@@ -28,14 +29,20 @@
         @if ( 'microdata' === generate_get_schema_type() )
             @php($itemprop = ' itemprop="text"')
         @endif
-
-        <div class="entry-content"{{$itemprop}}>
+        @if(generate_show_excerpt())
+        <div class="entry-summary"{{$itemprop}}>
             {!! Loop::excerpt() !!}
-            {!! wp_link_pages([
-                'before' => '<div class="page-links">' . __('Pages:', THEME_TD),
-                'after' => '</div>',
-            ]) !!}
         </div>
+        @else
+            <div class="entry-content"{{$itemprop}}>
+                {!! Loop::content() !!}
+                {!! wp_link_pages([
+                    'before' => '<div class="page-links">' . __('Pages:', THEME_TD),
+                    'after' => '</div>',
+                ]) !!}
+            </div>
+        @endif
+        @php(do_action( 'generate_after_entry_content' ))
 
         @php(do_action('generate_after_content'))
 

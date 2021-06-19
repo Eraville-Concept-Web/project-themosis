@@ -1,11 +1,11 @@
-<div class="inside-article fallback-page m-auto">
+<div class="inside-article">
 
     {{--    @hooked generate_featured_page_header_inside_single - 10--}}
     @php(do_action( 'generate_before_content' ))
 
     <header class="entry-header">
         <h1 class="entry-title"
-            itemprop="headline">{{ apply_filters( 'generate_404_title', __( 'Oops! That page can&rsquo;t be found.', THEME_TD ) )  }}
+            itemprop="headline">{{ apply_filters( 'generate_404_title', __( 'Oops! That page cannot be found.', THEME_TD ) )  }}
         </h1>
     </header>
 
@@ -18,7 +18,7 @@
         @php($itemprop = ' itemprop="text"')
     @endif
 
-    <div class="entry-content" {{ $itemprop }}>
+    <div class="entry-content"{{ $itemprop }}>
         @php(printf(
 			'<p>%s</p>',
 			apply_filters(
@@ -26,6 +26,7 @@
 				__('It looks like nothing was found at this location. Maybe try searching?', THEME_TD)
 			)
 		))
+        @php(get_search_form())
 
     </div>
 

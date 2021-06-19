@@ -13,12 +13,13 @@ require('mix-tailwindcss');
  */
 mix.setPublicPath('dist');
 mix.browserSync({
-	proxy: 'https://local.test'
+	proxy: 'https://ges.test'
 });
 
+mix.copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/webfonts');
 mix.sass('assets/sass/style.scss', 'dist/css/style.css')
 	// .sass('assets/sass/woocommerce.scss', 'dist/css/woocommerce.css')
-	.sass('assets/sass/editor-style.scss', 'dist/css/editor-style.css')
+	// .sass('assets/sass/editor-style.scss', 'dist/css/editor-style.css')
 	.tailwind();
 mix.js('assets/js/theme.js', 'dist/js/theme.min.js');
 

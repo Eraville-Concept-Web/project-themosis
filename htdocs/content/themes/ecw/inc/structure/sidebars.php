@@ -28,11 +28,11 @@ if ( ! function_exists( 'generate_construct_sidebars' ) ) {
 		if ( in_array( $layout, $ls ) ) {
 			get_sidebar( 'left' );
 		}
-//
-//		// If right sidebar, show it.
-//		if ( in_array( $layout, $rs ) ) {
-//			get_sidebar();
-//		}
+
+		// If right sidebar, show it.
+		if ( in_array( $layout, $rs ) ) {
+			get_sidebar();
+		}
 	}
 
 	/**

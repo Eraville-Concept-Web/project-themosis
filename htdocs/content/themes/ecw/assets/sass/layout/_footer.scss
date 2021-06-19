@@ -1,3 +1,34 @@
-/**
-Footer Style
- */
+@layer utilities {
+  footer {
+    #footer-widgets {
+      .footer-widgets-container {
+        @apply pl-0 pr-0;
+      }
+      aside {
+        @apply pl-9;
+      }
+      .menu {
+        @apply flex;
+        li {
+          a {
+            @apply text-white pr-8;
+          }
+        }
+      }
+
+      .footer-widget-2 {
+        .menu {
+          @apply justify-end;
+          li {
+            a {
+              @apply pl-8 pr-0;
+            }
+          }
+        }
+      }
+    }
+    .site-info {
+      @apply hidden;
+    }
+  }
+}

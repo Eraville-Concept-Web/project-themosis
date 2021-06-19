@@ -1,3 +1,13 @@
-/**
-Header Style
- */
+#site-navigation, #sticky-navigation, #mobile-header {
+  @apply border-t-4 border-gesRed-light;
+  @apply bg-gesRed max-w-full;
+  .home-link {
+    height: 50px;
+    a {
+      @apply flex flex-col justify-center h-full;
+    }
+      .fas {
+        @apply text-3xl;
+      }
+  }
+}

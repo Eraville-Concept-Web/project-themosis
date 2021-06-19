@@ -13,6 +13,4 @@
  * @param bool|string $media  Add to media selection dropdown. Make it also available
  *                            to the media custom field. If string, used as the display name ;)
  */
-return [
-    'single_tour' => [500, 500, false]
-];
+return [];

@@ -1,0 +1,13 @@
+@layer utilities {
+	@import "layout/general";
+	@import "layout/header";
+	@import "layout/footer";
+	@import "blog/single";
+
+
+	.single-zoom-meetings {
+		.content-area.container {
+			@apply mx-auto mb-8;
+		}
+	}
+}

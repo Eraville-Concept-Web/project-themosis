@@ -1,5 +1,5 @@
 <article id="post-@php(the_ID())" @php(post_class()) @php(generate_do_microdata( 'article' ))>
-    <div class="inside-article my-2">
+    <div class="inside-article">
         {{--        @hooked generate_featured_page_header_inside_single - 10--}}
         @php(do_action( 'generate_before_content' ))
 
@@ -13,7 +13,7 @@
                 @if ( generate_show_title() )
                     @php($params = generate_get_the_title_parameters())
 
-                    {{ Loop::title($params['before'], $params['after']) }}
+                    @php(the_title( $params['before'], $params['after'] ))
 
                 @endif
 
@@ -35,13 +35,13 @@
 
         @if ( generate_show_excerpt() )
 
-            <div class="entry-summary" {{ $itemprop }} >
+            <div class="entry-summary"{{ $itemprop }} >
                 {!!  Loop::excerpt()  !!}
             </div>
 
         @else
 
-            <div class="entry-content" {{ $itemprop }}>
+            <div class="entry-content"{{ $itemprop }}>
                 {!! Loop::content() !!}
                 @php(wp_link_pages(
                     array(

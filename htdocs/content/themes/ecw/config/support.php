@@ -33,8 +33,8 @@ return [
     // @see https://developer.wordpress.org/themes/functionality/custom-logo/
     /* ----------------------------------------------------------------------------------------------- */
     'custom-logo' => [
-		'height' => 100,
-		'width' => 100,
+		'height' => 85,
+		'width' => 300,
 		'flex-height' => true,
 		'flex-width' => true,
     ],

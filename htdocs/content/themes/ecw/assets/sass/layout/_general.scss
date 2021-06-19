@@ -1,0 +1,12 @@
+@layer utilities {
+  body {
+    &.single {
+      .site-content {
+        @apply bg-white px-10 md:p-12 lg:pb-0 pt-0 lg:pl-11;
+      }
+    }
+    .site-content {
+      @apply bg-white;
+    }
+  }
+}

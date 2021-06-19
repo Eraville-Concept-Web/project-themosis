@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('site-content')
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main">
+    <section id="primary" class="content-area {{ generate_do_element_classes( 'content' ) }}">
+        <main id="main" class="site-main {{ generate_do_element_classes( 'main' ) }}">
             @if(have_posts())
                 @while(have_posts())
                     @php(the_post())

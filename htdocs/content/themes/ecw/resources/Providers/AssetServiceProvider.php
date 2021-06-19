@@ -50,23 +50,23 @@
 				'all'
 			)->to( );
 
-			Asset::add(
-				'theme_woo',
-				'css/woocommerce.css',
-				[],
-				$theme->getHeader( 'version' ),
-				'all'
-			)->to();
+//			Asset::add(
+//				'theme_woo',
+//				'css/woocommerce.css',
+//				[],
+//				$theme->getHeader( 'version' ),
+//				'all'
+//			)->to();
 
-			Asset::add(
-				'_mbt-admin-style',
-				'css/editor-style.css',
-				[],
-				$theme->getHeader( 'version' ),
-				'all'
-			)->to(
-				'admin'
-			);
+//			Asset::add(
+//				'_mbt-admin-style',
+//				'css/editor-style.css',
+//				[],
+//				$theme->getHeader( 'version' ),
+//				'all'
+//			)->to(
+//				'admin'
+//			);
 			Asset::add( 'theme_js',
 				'js/theme.min.js', [ 'jquery' ],
 				$theme->getHeader( 'version' ),
