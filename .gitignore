@@ -2,11 +2,14 @@
 .DS_Store
 Thumbs.db
 
+### Vagrant
+/.vagrant
+
 ### Composer
 /vendor/
 
 ### IDE
-#/.idea
+/.idea
 
 ### PHPCS
 cs_fixer*
@@ -19,13 +22,11 @@ node_modules/
 /htdocs/cms/
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
-/htdocs/content/cache/
 
 ### Environment Credentials
-.env.env
 .env
-.env.production
-/htdocs/content/advanced-cache.php
+/htdocs/content/cache/
 /htdocs/content/wp-rocket-config/
-updraft/
-plugins/
+/htdocs/content/advanced-cache.php
+/htdocs/conf/imagify.conf
+/htdocs/conf/index.php
