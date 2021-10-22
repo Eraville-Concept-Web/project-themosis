@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ return [
     |
     */
     'default' => env('CACHE_DRIVER', 'file'),
-
+    
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
@@ -26,26 +28,26 @@ return [
     |
     */
     'stores' => [
-
+        
         'apc' => [
             'driver' => 'apc',
         ],
-
+        
         'array' => [
             'driver' => 'array',
         ],
-
+        
         'database' => [
             'driver' => 'database',
             'table' => 'cache',
             'connection' => null,
         ],
-
+        
         'file' => [
             'driver' => 'file',
             'path' => storage_path('framework/cache/data'),
         ],
-
+        
         'memcached' => [
             'driver' => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
@@ -64,14 +66,15 @@ return [
                 ],
             ],
         ],
-
+        
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
         ],
-
     ],
-
+    'wp_redis_client' => env('WP_REDIS_CLIENT', 'phpredis'),
+    'redis_host' => env('REDIS_HOST', '127.0.0.1'),
+    
     /*
     |--------------------------------------------------------------------------
     | Cache Key Prefix
@@ -84,6 +87,6 @@ return [
     */
     'prefix' => env(
         'CACHE_PREFIX',
-        str_slug(env('APP_NAME', 'themosis'), '_').'_cache'
+        Str::slug(env('APP_NAME', 'themosis'), '_').'_cache'
     ),
 ];

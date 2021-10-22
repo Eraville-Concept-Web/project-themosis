@@ -29,6 +29,7 @@
         @if ( 'microdata' === generate_get_schema_type() )
             @php($itemprop = ' itemprop="text"')
         @endif
+
         @if(generate_show_excerpt())
         <div class="entry-summary"{{$itemprop}}>
             {!! Loop::excerpt() !!}

@@ -17,8 +17,8 @@ Please see the [installation section](https://framework.themosis.com/docs/master
 3. Run composer install in root folder
 4. Check the that post-create-project-cmd Script in composer file has been run. If not run
     ```
-   php console vendor:publish --tag=themosis --force
-   php console key:generate --ansi
+   php artisan vendor:publish --tag=themosis --force
+   php artisan key:generate --ansi
    ```
 5. Run yarn in theme folder and root if needed
 

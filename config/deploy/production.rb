@@ -1,5 +1,5 @@
 set :stage, :production
-set :application, "mybibletour"
+set :application, "site"
 set :home, "/home2/flosteve/#{fetch :application}"
 set :tmp_dir, "#{fetch :home}/tmp"
 set :branch, :master

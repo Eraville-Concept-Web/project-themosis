@@ -2,12 +2,11 @@
 	@import "layout/general";
 	@import "layout/header";
 	@import "layout/footer";
+	@import "layout/sidebar";
+	@import "blog/search";
 	@import "blog/single";
-
-
-	.single-zoom-meetings {
-		.content-area.container {
-			@apply mx-auto mb-8;
-		}
-	}
+	@import "blog/archive";
+	@import "pages/home";
+	@import "components/buttons";
+	@import "components/form";
 }

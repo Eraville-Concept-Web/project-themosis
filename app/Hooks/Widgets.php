@@ -3,9 +3,9 @@
 	namespace App\Hooks;
 
 	use Themosis\Hook\Hookable;
-
-	/**
-	 * Project mybibletour-themosis
+    
+    /**
+	 * Project
 	 * Author Steve
 	 * Class Widgets
 	 * @package App\Hooks

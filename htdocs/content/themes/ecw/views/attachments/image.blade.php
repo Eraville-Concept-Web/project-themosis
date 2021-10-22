@@ -1,6 +1,4 @@
-@extends('layouts.main')
-
-@section('site-content')
+<x-layout>
     <section id="primary" class="content-area">
         <main id="main" class="site-main">
             @while(have_posts())
@@ -52,4 +50,4 @@
             @endwhile
         </main>
     </section>
-@endsection
+</x-layout>

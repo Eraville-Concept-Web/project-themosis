@@ -38,7 +38,6 @@
             <div class="entry-summary"{{ $itemprop }} >
                 {!!  Loop::excerpt()  !!}
             </div>
-
         @else
 
             <div class="entry-content"{{ $itemprop }}>

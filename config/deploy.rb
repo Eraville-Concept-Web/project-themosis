@@ -1,7 +1,5 @@
-set :repo_url, 'git@gitlab.com:flosteve/mbt-themosis.git'
+set :repo_url, 'git@gitlab.com:flosteve/repo.git'
 set :keep_releases, 3
-#set :wpcli_local_url, '/Users/Steve/Sites/mbt/app/mybibletour/web'
-
 #
 # namespace :deploy do
 #   after :starting, 'composer:install_executable'
@@ -28,7 +26,7 @@ before :deploy, 'git:push'
 
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
-after 'deploy:publishing', 'deploy:commandwpcli'
+# after 'deploy:publishing', 'deploy:commandwpcli'
 
 # The above update_option_paths task is not run by default
 # Note that you need to have WP-CLI installed on your server

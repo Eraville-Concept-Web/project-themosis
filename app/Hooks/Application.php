@@ -12,7 +12,7 @@ use Themosis\Support\Facades\Filter;
 class Application extends Hookable
 {
     use WordPressUrl;
-
+    
     public function register()
     {
         /*
@@ -28,7 +28,7 @@ class Application extends Hookable
         Action::add('setup_theme', function () {
             $this->app->setLocale(determine_locale());
         });
-
+        
         /*
         |--------------------------------------------------------------------------
         | Application text domain
@@ -39,7 +39,7 @@ class Application extends Hookable
         |
         */
         load_application_textdomain(APP_TD, determine_locale());
-
+        
         /*
         |--------------------------------------------------------------------------
         | Filter WordPress URLs
@@ -52,15 +52,15 @@ class Application extends Hookable
         Filter::add('option_home', function ($url) {
             return $this->formatHomeUrl($url);
         });
-
+        
         Filter::add('option_siteurl', function ($url) {
             return $this->formatSiteUrl($url);
         });
-
+        
         Filter::add('network_site_url', function ($url, $path, $scheme) {
             return $this->formatNetworkUrl($url);
         });
-
+        
         /*
         |--------------------------------------------------------------------------
         | Framework global JS + CSRF
@@ -83,7 +83,7 @@ class Application extends Hookable
                 ])
             );
         });
-
+        
         Action::add('wp_head', function () {
             echo $this->app->outputJavascriptGlobal(
                 config('assets.ajax.front', 'themosis'),
@@ -91,13 +91,13 @@ class Application extends Hookable
                     'ajaxurl' => admin_url('admin-ajax.php')
                 ])
             );
-
+            
             // CSRF
             if (function_exists('csrf_token')) {
                 printf('<meta name="csrf-token" content="%s">', csrf_token());
             }
         });
-
+        
         /*
         |--------------------------------------------------------------------------
         | Framework core assets
@@ -116,9 +116,9 @@ class Application extends Hookable
                 wp_enqueue_style('wp-components');
             });
             Asset::add('themosis_core_js', 'js/themosis.core.js', ['lodash'], $this->app->version())
-                ->to('admin');
+                 ->to('admin');
             Asset::add('themosis_post_status', 'js/themosis.poststatus.js', ['jquery', 'lodash'], $this->app->version())
-                ->to('admin');
+                 ->to('admin');
         } catch (AssetException $e) {
             logger($e->getMessage());
         }

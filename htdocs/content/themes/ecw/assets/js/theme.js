@@ -1,6 +1,5 @@
 jQuery(document).ready(
     function ($) {
-        if ( $('#right-sidebar')) {
-            // $('#right-sidebar').appendTo($('#content'))
-        }
+        let html = '<div>Article à la une</div>'
+        $('.home-featured-post .uagb-post__cta').insertAfter($('.home-featured-post article .uagb-post__inner-wrap .uagb-post__image'))
     })

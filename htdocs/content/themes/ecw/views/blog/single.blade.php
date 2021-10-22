@@ -1,6 +1,4 @@
-@extends('layouts.main')
-
-@section('site-content')
+<x-layout>
     <div id="primary" @php (generate_do_element_classes( 'content' ))>
         <main id="main" @php (generate_do_element_classes( 'main' ))>
             @php(do_action( 'generate_before_main_content' ))
@@ -22,4 +20,5 @@
 
     @php(do_action( 'generate_after_primary_content_area' ))
     @php(generate_construct_sidebars())
-@endsection
+</x-layout>
+

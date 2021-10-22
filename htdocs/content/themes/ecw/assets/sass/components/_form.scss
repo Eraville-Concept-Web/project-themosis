@@ -1,0 +1,26 @@
+#gform_wrapper_1 {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select
+  {
+    //@apply border border-chePrimary p-2 rounded text-cheDark;
+  }
+
+  #field_1_2, input[type="email"], .ginput_container_email {
+    @apply mt-0;
+  }
+
+  input[type=submit] {
+    @apply rounded;
+  }
+
+  .gfield_consent_label {
+    @apply text-white;
+  }
+}

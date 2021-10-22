@@ -1,8 +1,8 @@
 <?php
 
-	use Themosis\Support\Facades\Filter;
+use Themosis\Support\Facades\Filter;
 
-	/**
+/**
 	 * Authorize SVG + WEBP import in wordpress
 	 */
 	Filter::add(
@@ -10,6 +10,7 @@
 		function ($mimes) {
 			$mimes['svg'] = 'image/svg+xml';
 			$mimes['webp'] = 'image/webp';
+			$mimes['json'] = 'application/json';
 			return $mimes;
 		}
 	);

@@ -1,0 +1,17 @@
+.blog {
+  .entry-title, .entry-meta {
+    a {
+      //@apply text-chePrimary hover:text-cheDark;
+    }
+  }
+
+  .entry-meta {
+    .gp-icon {
+      //@apply text-cheDark;
+    }
+  }
+
+  #main .post {
+    @apply pb-10;
+  }
+}

@@ -1,32 +1,29 @@
 <?php
 
-	/**
-	 * Application routes.
-	 */
-	Route::any( 'front', 'HomeController@index' );
+use App\Http\Controllers\ArchiveController;
+use App\Http\Controllers\ExceptionController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 
-	/*
-	 * Woocommerce Page
-	 */
-//	Route::any( 'product', 'ShopController@single' );
-//	Route::any( 'cart', 'ShopController@shop' );
-//	Route::any( 'checkout', 'ShopController@shop' );
-//	Route::any( 'account', 'ShopController@shop' );
-//	Route::any( 'wc_endpoint', 'ShopController@shop' );
-//	Route::any( 'product_category', 'ShopController@archive' );
-//	Route::any( 'product_tag', 'ShopController@archive' );
-//	Route::any( 'shop', 'ShopController@archive' );
+/**
+ * Application routes.
+ */
+Route::any('front', [HomeController::class, 'index']);
 
-	/**
-	 * Generic Pages
-	 */
-	Route::any( 'single', 'PostController@index' );
-	Route::any( 'page', 'PageController@index' );
-	Route::any( 'archive', 'ArchiveController@index' );
+/**
+ * Generic Pages
+ */
+Route::any('blog', [ArchiveController::class, 'index']);
+Route::any('archive', [ArchiveController::class, 'index']);
+Route::any('single', [PostController::class, 'index']);
+Route::any('page', [PageController::class, 'index']);
+Route::any('singular', [PostController::class, 'index']);
 
-	/*
-	 * Regular & fallback pages
-	 */
+/*
+ * Regular & fallback pages
+ */
 
-	Route::any( 'search', 'SearchController@index' );
-	Route::fallback( 'ExceptionController@index' );
+Route::any('search', [SearchController::class, 'index']);
+Route::fallback([ExceptionController::class, 'index']);

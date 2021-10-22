@@ -6,7 +6,7 @@
      * @package MBT
      */
 
-    namespace MBT_THEME\Inc\Block;
+    namespace UGES_THEME\Inc\Block;
 
     use App\Traits\Singleton;
     use Themosis\Support\Facades\Action;
@@ -17,61 +17,47 @@
      * Author Steve
      * Class RegistrationBlock
      *
-     * @package MBT_THEME\Inc\Block
+     * @package UGES_THEME\Inc\Block
      */
     class RegistrationBlock
     {
         use Singleton;
-
-        const POST_NUMBER = 3;
 
         /**
          *  Constructor
          */
         public function __construct()
         {
-            Action::add('acf/init', [$this, 'mbt_acf_init_block_types']);
+            Action::add('acf/init', [$this, 'uges_acf_init_block_types']);
         }
 
         /**
          * Display Tours as loop in Gutenberg block
          */
-        public static function mbt_acf_block_virtual()
+        public static function uges_acf_author_social_links()
         {
-            $post_per_page = get_field('post_per_page');
-            $tour_category = get_field('category_tour');
-            $languages     = get_field('languages');
+			$author_meta_twitter = get_the_author_meta('liens_twitter');
+			$author_meta_linkedin = get_the_author_meta('liens_linkedin');
 
-            $args = [
-                'post_type'      => 'product',
-                'posts_per_page' => $post_per_page ?: self::POST_NUMBER,
-                'product_cat'    => $tour_category && is_object($tour_category) ? $tour_category->slug : 'uncategorized',
-                'product_tag'    => $languages ?: ['english'],
-                'orderby'        => 'rand',
-                'order'          => 'ASC',
-            ];
+            echo view('blocks.author-social-links')
+	            ->with(compact('author_meta_twitter', 'author_meta_linkedin'));
 
-            $loop = new WP_Query($args);
-
-            echo view('blocks.virtual-loop')->with(compact('loop'));
-
-            wp_reset_postdata();
         }
 
-        public function mbt_acf_init_block_types()
+        public function uges_acf_init_block_types()
         {
             // Check function exists.
             if (function_exists('acf_register_block_type')) :
                 // register a testimonial block.
                 acf_register_block_type(
                     [
-                        'name'            => 'virtual-tours-loop',
-                        'title'           => __('Custom Tours Loop', THEME_TD),
-                        'description'     => __('A custom Block to display Tours', THEME_TD),
-                        'render_callback' => [$this, 'mbt_acf_block_virtual'],
+                        'name'            => 'author-social-links',
+                        'title'           => __('Author Social Links', THEME_TD),
+                        'description'     => __('A custom Block to author social links', THEME_TD),
+                        'render_callback' => [$this, 'uges_acf_author_social_links'],
                         'category'        => 'formatting',
                         'icon'            => 'admin-comments',
-                        'keywords'        => ['tour', 'loop'],
+                        'keywords'        => ['social', 'author'],
                     ]
                 );
             endif;

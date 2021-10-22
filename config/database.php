@@ -12,7 +12,7 @@ return [
     |
     */
     'default' => env('DATABASE_CONNECTION', 'mysql'),
-
+    
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -60,7 +60,7 @@ return [
     |
     */
     'migrations' => 'migrations',
-
+    
     /*
     |--------------------------------------------------------------------------
     | Redis Databases
@@ -72,12 +72,12 @@ return [
     |
     */
     'redis' => [
-        'client' => 'predis',
+        'client'  => env('WP_REDIS_CLIENT', 'phpredis'),
         'default' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host'     => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
-            'database' => 0,
+            'port'     => env('REDIS_PORT', 6379),
+            'database' => env('REDIS_DB', 0),
         ],
     ],
 ];

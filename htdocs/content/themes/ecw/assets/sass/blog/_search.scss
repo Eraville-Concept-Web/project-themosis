@@ -1,0 +1,30 @@
+.search {
+  .inside-article {
+    @apply button-che text-white pb-4;
+    .entry-header, .featured_caption, .entry-summary, .entry-meta {
+      @apply px-4;
+    }
+    .entry-header {
+      .entry-meta {
+        @apply pl-0 pb-2 font-semibold;
+      }
+      h2 {
+        @apply leading-none;
+        a {
+          @apply text-white text-2xl;
+        }
+      }
+    }
+    .featured_caption {
+    @apply italic;
+    }
+    .featured_caption , .entry-summary{
+      @apply text-base;
+    }
+    .entry-meta {
+      span, a {
+        @apply text-white;
+      }
+    }
+  }
+}

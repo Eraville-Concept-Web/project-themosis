@@ -1,6 +1,6 @@
 let mix = require('laravel-mix');
-require('mix-tailwindcss');
-
+// require('mix-tailwindcss');
+const tailwindcss = require('tailwindcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,14 +13,18 @@ require('mix-tailwindcss');
  */
 mix.setPublicPath('dist');
 mix.browserSync({
-	proxy: 'https://ges.test'
+    proxy: {
+        target: "https://site.test",
+    }
 });
 
 mix.copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/webfonts');
-mix.sass('assets/sass/style.scss', 'dist/css/style.css')
-	// .sass('assets/sass/woocommerce.scss', 'dist/css/woocommerce.css')
-	// .sass('assets/sass/editor-style.scss', 'dist/css/editor-style.css')
-	.tailwind();
-mix.js('assets/js/theme.js', 'dist/js/theme.min.js');
+mix.sass('assets/sass/style.scss', 'dist/css/style.css') .options({
+    postCss: [ tailwindcss('./tailwind.config.js') ],
+}).webpackConfig(require('./webpack.config'));
+    // .tailwind();
+mix.js('assets/js/theme.js', 'dist/js/theme.min.js').vue();
 
-
+if (mix.inProduction()) {
+    mix.version();
+}

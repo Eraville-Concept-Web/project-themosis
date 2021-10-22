@@ -2,7 +2,20 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Routing\Middleware\ThrottleRequests;
+use Illuminate\Routing\Middleware\ValidateSignature;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Themosis\Core\Http\Kernel as HttpKernel;
+use Themosis\Route\Middleware\WordPressAuthorize;
+use Themosis\Route\Middleware\WordPressBindings;
+use Themosis\Route\Middleware\WordPressBodyClass;
+use Themosis\Route\Middleware\WordPressHeaders;
 
 class Kernel extends HttpKernel
 {
@@ -14,7 +27,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [];
-
+    
     /**
      * The application's route middleware groups.
      *
@@ -22,17 +35,17 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'admin' => [
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class
+            StartSession::class,
+            ShareErrorsFromSession::class
         ],
         'web' => [
             'wp.headers',
             'wp.bindings',
             'bindings',
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            'csrf',
-            \Themosis\Route\Middleware\WordPressBodyClass::class
+            StartSession::class,
+            ShareErrorsFromSession::class,
+//            'csrf',
+            WordPressBodyClass::class
         ],
         'api' => [
             'throttle:60,1',
@@ -40,7 +53,7 @@ class Kernel extends HttpKernel
             'bindings'
         ]
     ];
-
+    
     /**
      * The application's route middleware.
      * Aliased middleware. Can be used individually or within groups.
@@ -48,15 +61,15 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
-        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
-        'wp.headers' => \Themosis\Route\Middleware\WordPressHeaders::class
+        'auth' => Authenticate::class,
+        'bindings' => SubstituteBindings::class,
+        'csrf' => VerifyCsrfToken::class,
+        'guest' => RedirectIfAuthenticated::class,
+        'signed' => ValidateSignature::class,
+        'throttle' => ThrottleRequests::class,
+        'verified' => EnsureEmailIsVerified::class,
+        'wp.bindings' => WordPressBindings::class,
+        'wp.can' => WordPressAuthorize::class,
+        'wp.headers' => WordPressHeaders::class
     ];
 }

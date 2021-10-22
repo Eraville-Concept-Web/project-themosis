@@ -11,14 +11,5 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = [
-    	//English
-	    'my-account',
-	    'checkout',
-	    'cart',
-	    //French
-	    'fr/mon-compte',
-	    'fr/paiement',
-	    'fr/panier',
-    ];
+    protected $except = [];
 }

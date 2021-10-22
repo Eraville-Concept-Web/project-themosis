@@ -1,28 +1,27 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: false,
+    purge: [
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        './resources/js/**/*.vue',
+    ],
     darkMode: false, // or 'media' or 'class'
     important: true,
     theme: {
-        extend: {},
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
             black: colors.black,
             white: colors.white,
-            gesRed: {
-                DEFAULT: '#f03424',
-                light: '#fc9272'
+            green: colors.emerald,
+            red: colors.red,
+            gray: colors.gray,
+            ecwPrimary: {
+                DEFAULT: '#2596BE'
             },
-            blueDarkGes: {
-                DEFAULT: '#233e8c'
-            },
-            blueLightGes: {
-                DEFAULT: '#008ed3'
-            },
-            gesGray: {
-                DEFAULT: '#f0f0f0',
+            ecwSecondary: {
+                DEFAULT: '#545454'
             },
         },
         fontFamily: {
@@ -34,5 +33,6 @@ module.exports = {
         extend: {
             borderWidth: ['hover'],
         }
-    }
-}
+    },
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+};

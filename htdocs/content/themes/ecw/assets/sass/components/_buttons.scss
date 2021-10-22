@@ -1,0 +1,15 @@
+.button-che {
+  //@apply bg-chePrimary hover:bg-cheDark rounded-full text-white;
+}
+
+.main-navigation {
+  .main-nav {
+    ul {
+      li.button-che {
+        a {
+          @apply text-white hover:text-white;
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,12 @@
 .DS_Store
 Thumbs.db
 
+### Homestead
+after.sh
+aliases
+Homestead.yaml
+Vagrantfile
+
 ### Vagrant
 /.vagrant
 
@@ -20,13 +26,20 @@ node_modules/
 
 ### WordPress
 /htdocs/cms/
-/htdocs/content/uploads/
+uploads/
 /htdocs/content/upgrade/
+/htdocs/content/advanced-cache.php
+/htdocs/content/wp-rocket-config/
+updraft/
+plugins/
+mu-plugins/
+/htdocs/content/object-cache.php
+/htdocs/content/db.php
 
 ### Environment Credentials
+.env.env
 .env
-/htdocs/content/cache/
-/htdocs/content/wp-rocket-config/
-/htdocs/content/advanced-cache.php
-/htdocs/conf/imagify.conf
-/htdocs/conf/index.php
+.env.production
+cache/
+
+.github/

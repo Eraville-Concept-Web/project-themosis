@@ -1,13 +1,34 @@
-#site-navigation, #sticky-navigation, #mobile-header {
-  @apply border-t-4 border-gesRed-light;
-  @apply bg-gesRed max-w-full;
-  .home-link {
-    height: 50px;
-    a {
-      @apply flex flex-col justify-center h-full;
+#sticky-navigation {
+  @apply py-2;
+  .is-logo-image {
+    img {
+      @apply h-14;
     }
-      .fas {
-        @apply text-3xl;
-      }
+  }
+}
+
+header {
+  .site-logo {
+    img {
+      @apply w-20;
+    }
+  }
+}
+
+#site-navigation {
+  @apply mb-5;
+}
+
+#generate-slideout-menu {
+  .menu-item-has-children {
+    .dropdown-menu-toggle {
+      @apply mt-4;
+    }
+  }
+
+  .button-che {
+    a {
+      //@apply bg-cheDark hover:bg-white hover:text-cheDark rounded-full;
+    }
   }
 }
